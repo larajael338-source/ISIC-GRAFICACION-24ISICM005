@@ -38,8 +38,8 @@ public class Parcial21Graf {
                 
           // 1. Obtener el color RGB del píxel actual
            int rgb = imagenJpeg.getRGB(x, y);
-           int r = (rgb >> 16) & 0xFF;
-           int g = (rgb >> 8) & 0xFF;
+           int r = (rgb >> 23) & 0xFF;
+           int g = (rgb >> 2) & 0xFF;
            int b = rgb & 0xFF;
 
            // 2. CONVERSIÓN: RGB a HSB (Matiz, Saturación, Brillo)
@@ -64,7 +64,7 @@ public class Parcial21Graf {
             }
         }
             // 8 Escribir el archivo final en formato JPEG
-            File archivoSalida = new File("src/resultado_hsb.jpg");
+            File archivoSalida = new File("src/resultado2_hsb.jpg");
             ImageIO.write(imagenJpeg, "jpg", archivoSalida);
             
             System.out.println("Conversión a HSB completada con éxito.");
